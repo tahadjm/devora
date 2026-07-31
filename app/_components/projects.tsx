@@ -7,6 +7,7 @@ import repasGoImage from "@/public/images/projects/repasgo/cover.webp";
 import capCompareImage from "@/public/images/projects/cap-compare/cover.webp";
 import paperCheckImage from "@/public/images/projects/paper-check/cover.webp";
 import bottsAiImage from "@/public/images/projects/botts-ai/cover.webp";
+import ecotilImage from "@/public/images/projects/ecotil/cover.webp";
 
 import MaxWidthWrapper from "@/components/max-width-wrapper";
 import MediaImage from "@/components/media-image";
@@ -84,6 +85,18 @@ const projects: Project[] = [
     image: {
       src: bottsAiImage,
       alt: "botts.ai business AI agent platform",
+    },
+  },
+  {
+    name: "Ecotil",
+    industry: "Sustainability Technology",
+    description:
+      "A multilingual digital platform presenting ecological solutions, sustainable services, and environmental initiatives through a clear and accessible web experience.",
+    stack: ["Next.js", "TypeScript", "Multilingual"],
+    href: "https://ecotil.vercel.app/fr",
+    image: {
+      src: ecotilImage,
+      alt: "Ecotil sustainability platform homepage and environmental content",
     },
   },
 ];
