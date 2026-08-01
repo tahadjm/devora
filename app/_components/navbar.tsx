@@ -4,12 +4,12 @@ import { Button } from "@/components/ui/button";
 
 const links = [
   { label: "Home", href: "/", active: true },
-  { label: "Services", href: "#services" },
-  { label: "Projects", href: "#projects" },
+  { label: "Services", href: "/#services" },
+  { label: "Projects", href: "/#projects" },
   { label: "About", href: "#" },
   { label: "Pricing", href: "#" },
   { label: "Blog", href: "#" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -36,7 +36,7 @@ export default function Navbar() {
           ))}
         </nav>
         <Button variant="accent" size="sm" className="h-9 px-5" asChild>
-          <Link href="#contact">Start Project</Link>
+          <Link href="/book-a-call">Discuss your project</Link>
         </Button>
       </header>
     </div>

@@ -41,7 +41,7 @@ export default function Hero() {
         </p>
         <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
           <Button variant="accent" size="lg" asChild>
-            <Link href="#contact">Start Your Project</Link>
+            <Link href="/book-a-call">Discuss your project</Link>
           </Button>
           <Button variant="secondary" size="lg" className="border-zinc-200" asChild>
             <Link href="#projects">View Our Work</Link>

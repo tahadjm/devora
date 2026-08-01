@@ -15,7 +15,7 @@ export default function CtaBanner() {
             hours
           </p>
           <Button variant="accent" size="lg" className="mt-10" asChild>
-            <Link href="mailto:hello@devora.dev">Get in Touch</Link>
+            <Link href="/book-a-call">Book a discovery call</Link>
           </Button>
         </div>
       </MaxWidthWrapper>
