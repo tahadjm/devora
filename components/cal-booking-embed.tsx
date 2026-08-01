@@ -51,6 +51,12 @@ export default function CalBookingEmbed({
         cal("on", { action: "linkFailed", callback: handleUnavailable });
         cal("ui", {
           theme: "light",
+          colorScheme: "light",
+          styles: {
+            body: {
+              background: "#ffffff",
+            },
+          },
           cssVarsPerTheme: {
             light: {
               "cal-brand": "#D4AF37",
@@ -127,7 +133,7 @@ export default function CalBookingEmbed({
       <Cal
         namespace={CAL_NAMESPACE}
         calLink={CAL_LINK}
-        className="min-h-[720px] w-full min-w-0 md:min-h-[760px] lg:min-h-[800px]"
+        className="min-h-180 w-full min-w-0 md:min-h-190 lg:min-h-200"
         style={{
           width: "100%",
           height: "100%",
@@ -137,6 +143,7 @@ export default function CalBookingEmbed({
           layout: "month_view",
           useSlotsViewOnSmallScreen: "true",
           theme: "light",
+          "ui.color-scheme": "light",
         }}
       />
     </div>
