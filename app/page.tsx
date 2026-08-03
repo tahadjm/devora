@@ -7,6 +7,7 @@ import Tools from "./_components/tools";
 import Projects from "./_components/projects";
 import Testimonials from "./_components/testimonials";
 import CtaBanner from "./_components/cta-banner";
+import Contact from "./_components/contact";
 import Footer from "./_components/footer";
 
 export const metadata: Metadata = {
@@ -27,6 +28,7 @@ export default function HomePage() {
         <Projects />
         <Testimonials />
         <CtaBanner />
+        <Contact />
         <Footer />
       </main>
     </div>

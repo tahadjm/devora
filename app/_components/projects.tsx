@@ -137,7 +137,7 @@ export default function Projects() {
           clients grow
         </h2>
 
-        <div
+        {/* <div
           className="mt-10 flex flex-wrap gap-3"
           aria-label="Project categories"
         >
@@ -154,7 +154,7 @@ export default function Projects() {
               {filter}
             </span>
           ))}
-        </div>
+        </div> */}
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (

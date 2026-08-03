@@ -35,7 +35,7 @@ export default function Navbar() {
             className="hidden h-9 px-5 sm:inline-flex"
             asChild
           >
-            <Link href="/book-a-call">Discuss your project</Link>
+            <Link href="/#contact">Discuss your project</Link>
           </Button>
           <MobileNav />
         </div>

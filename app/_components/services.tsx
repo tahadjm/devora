@@ -142,10 +142,10 @@ function ServiceCard({
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/40 to-black/75"
+        className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/40 to-black/75 transition-opacity duration-300 ease-out motion-reduce:transition-none [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-focus-within:opacity-100 [@media(hover:hover)]:group-hover:opacity-100"
       />
 
-      <div className="relative flex flex-col gap-3 p-6">
+      <div className="relative flex flex-col gap-3 p-6 transition-[opacity,translate] duration-300 ease-out motion-reduce:transition-none [@media(hover:hover)]:translate-y-4 [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-focus-within:translate-y-0 [@media(hover:hover)]:group-focus-within:opacity-100 [@media(hover:hover)]:group-hover:translate-y-0 [@media(hover:hover)]:group-hover:opacity-100">
         <div className="flex items-center gap-3">
           <ServiceIcon icon={service.icon} />
           <h3
@@ -200,14 +200,14 @@ export default function Services() {
               />
               <div
                 aria-hidden="true"
-                className="absolute inset-0"
+                className="absolute inset-0 transition-opacity duration-300 ease-out motion-reduce:transition-none [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-focus-within:opacity-100 [@media(hover:hover)]:group-hover:opacity-100"
                 style={{
                   backgroundImage:
                     "linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 30%, rgba(0,0,0,0.8) 60%, rgba(0,0,0,0.92) 100%)",
                 }}
               />
 
-              <div className="relative flex flex-col items-start gap-3 p-5">
+              <div className="relative flex flex-col items-start gap-3 p-5 transition-[opacity,translate] duration-300 ease-out motion-reduce:transition-none [@media(hover:hover)]:translate-y-4 [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-focus-within:translate-y-0 [@media(hover:hover)]:group-focus-within:opacity-100 [@media(hover:hover)]:group-hover:translate-y-0 [@media(hover:hover)]:group-hover:opacity-100">
                 <div className="flex items-center gap-2.5">
                   <ServiceIcon icon={featuredService.icon} />
                   <h3 className="font-display text-lg font-semibold text-white">

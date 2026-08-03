@@ -120,7 +120,7 @@ export default function WhoWeAre() {
             </div>
 
             <Button variant="accent" size="lg" className="mt-10" asChild>
-              <Link href="/book-a-call">Meet the Team</Link>
+              <Link href="/#contact">Meet the Team</Link>
             </Button>
           </div>
 

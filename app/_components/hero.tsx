@@ -206,7 +206,7 @@ export default function Hero() {
         </p>
         <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
           <Button variant="accent" size="lg" asChild>
-            <Link href="/book-a-call">Start Your Project</Link>
+            <Link href="/#contact">Start Your Project</Link>
           </Button>
           <Button
             variant="secondary"

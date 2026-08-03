@@ -57,7 +57,7 @@ export default function MobileNav() {
         <div className="mt-auto border-t border-zinc-200/60 p-6">
           <SheetClose asChild>
             <Button variant="accent" className="w-full" asChild>
-              <Link href="/book-a-call">Discuss your project</Link>
+              <Link href="/#contact">Discuss your project</Link>
             </Button>
           </SheetClose>
         </div>
