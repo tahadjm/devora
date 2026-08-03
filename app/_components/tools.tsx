@@ -1,25 +1,11 @@
-import {
-  Atom,
-  Boxes,
-  CircleX,
-  Cloud,
-  Code,
-  Container,
-  Database,
-  Globe,
-  PenTool,
-  Server,
-  ShoppingCart,
-  Smartphone,
-  type LucideIcon,
-} from "lucide-react";
+import Image from "next/image";
 
 import MaxWidthWrapper from "@/components/max-width-wrapper";
 import { Card } from "@/components/ui/card";
 import SectionBadge from "./section-badge";
 
 type Tool = {
-  icon: LucideIcon;
+  icon: string;
   name: string;
   category: string;
   description: string;
@@ -27,130 +13,124 @@ type Tool = {
 
 const tools: Tool[] = [
   {
-    icon: CircleX,
+    icon: "/images/tools/nextjs.png",
     name: "Next.js",
-    category: "Web Framework",
-    description: "Fast and scalable web platforms.",
+    category: "Frontend Framework",
+    description: "Production-grade React applications",
   },
   {
-    icon: Atom,
+    icon: "/images/tools/react.png",
     name: "React",
     category: "UI Library",
-    description: "Reusable interfaces and dashboards.",
+    description: "Interactive client-side interfaces",
   },
   {
-    icon: Smartphone,
-    name: "React Native",
-    category: "Mobile Framework",
-    description: "iOS and Android applications.",
-  },
-  {
-    icon: Boxes,
-    name: "NestJS",
-    category: "Backend Framework",
-    description: "Structured and maintainable APIs.",
-  },
-  {
-    icon: Server,
-    name: "Node.js",
-    category: "Backend Runtime",
-    description: "Reliable server-side applications.",
-  },
-  {
-    icon: Database,
-    name: "PostgreSQL",
-    category: "Database",
-    description: "Secure transactional data storage.",
-  },
-  {
-    icon: Container,
-    name: "Docker",
-    category: "Infrastructure",
-    description: "Consistent production environments.",
-  },
-  {
-    icon: Code,
-    name: "Python",
-    category: "Backend Language",
-    description: "APIs, automation, and data services.",
-  },
-  {
-    icon: Globe,
+    icon: "/images/tools/wordpress.png",
     name: "WordPress",
-    category: "Content Platform",
-    description: "Flexible content-driven websites.",
+    category: "Headless CMS",
+    description: "Flexible content management",
   },
   {
-    icon: ShoppingCart,
+    icon: "/images/tools/figma.png",
+    name: "Figma",
+    category: "Design Tool",
+    description: "Collaborative interface design",
+  },
+  {
+    icon: "/images/tools/flutter.png",
+    name: "Flutter",
+    category: "Mobile SDK",
+    description: "Multi-platform native applications",
+  },
+  {
+    icon: "/images/tools/nodejs.png",
+    name: "Node.js",
+    category: "Runtime Environment",
+    description: "Scalable backend services",
+  },
+  {
+    icon: "/images/tools/python.png",
+    name: "Python",
+    category: "Backend & AI",
+    description: "Data pipelines & machine learning",
+  },
+  {
+    icon: "/images/tools/shopify.png",
     name: "Shopify",
     category: "E-Commerce",
-    description: "Custom online commerce experiences.",
+    description: "High-conversion digital storefronts",
   },
   {
-    icon: Cloud,
+    icon: "/images/tools/laravel.png",
+    name: "Laravel",
+    category: "PHP Framework",
+    description: "Robust custom business systems",
+  },
+  {
+    icon: "/images/tools/aws.png",
     name: "AWS",
-    category: "Cloud Platform",
-    description: "Scalable cloud infrastructure.",
-  },
-  {
-    icon: PenTool,
-    name: "Figma",
-    category: "Product Design",
-    description: "Interfaces, prototypes, and design systems.",
+    category: "Cloud Infrastructure",
+    description: "Secure, global hosting & DevOps",
   },
 ];
 
 export default function Tools() {
   return (
-    <section className="py-24">
+    <section className="border-y border-zinc-200/60 bg-white py-24">
       <MaxWidthWrapper className="max-w-360">
         <div className="text-center">
           <SectionBadge>Our Tech Stack</SectionBadge>
 
           <h2 className="mt-4 font-display text-4xl font-bold tracking-tight text-ink">
-            Tools behind the products we build
+            Tools &amp; Technologies We Work With
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-relaxed text-ink-secondary">
-            A focused stack for building web platforms, mobile applications,
-            backend systems, and production infrastructure.
+            We use the best tools to deliver exceptional results. From scalable
+            cloud architectures to modern frontend frameworks, our stack is
+            optimized for performance, security, and velocity.
           </p>
         </div>
 
-        <div className="-mx-4 mt-12 overflow-x-auto px-4 pb-6">
-          <div className="flex w-max gap-4">
-            {tools.map((tool) => {
-              const Icon = tool.icon;
+        <div className="-mx-4 mt-12 overflow-x-auto px-4 pb-6 pt-1">
+          <div className="flex w-max gap-6">
+            {tools.map((tool) => (
+              <Card
+                key={tool.name}
+                className="group w-70 shrink-0 gap-4 rounded-2xl border-[1.5px] border-zinc-200/80 bg-white p-7 shadow-none transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[#e8a838] hover:shadow-[0_12px_24px_rgba(232,168,56,0.12)]"
+              >
+                <span className="relative block size-12 overflow-hidden rounded-xl border border-zinc-200/40 transition-colors duration-300 group-hover:border-[rgba(232,168,56,0.3)]">
+                  <Image
+                    src={tool.icon}
+                    alt=""
+                    fill
+                    sizes="48px"
+                    className="object-contain"
+                  />
+                </span>
 
-              return (
-                <Card
-                  key={tool.name}
-                  className="group w-62 shrink-0 gap-0 border-zinc-200/80 bg-white p-6 shadow-none transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-[0_12px_28px_rgba(24,24,27,0.06)]"
-                >
-                  <span className="flex size-11 items-center justify-center rounded-xl bg-zinc-100 text-ink-secondary transition-colors duration-300 group-hover:bg-gold-soft group-hover:text-gold-deep">
-                    <Icon className="size-5" aria-hidden="true" />
-                  </span>
-
-                  <h3 className="mt-5 font-display text-lg font-semibold text-ink">
+                <div className="flex flex-col gap-1.5">
+                  <h3 className="font-display text-lg font-semibold text-ink">
                     {tool.name}
                   </h3>
 
-                  <p className="mt-1 font-mono text-[10px] font-medium uppercase tracking-[0.12em] text-ink-muted transition-colors group-hover:text-gold-deep">
+                  <p className="font-mono text-xs font-semibold uppercase tracking-[0.5px] text-ink-muted transition-colors duration-300 group-hover:text-[#e8a838]">
                     {tool.category}
                   </p>
+                </div>
 
-                  <p className="mt-4 text-sm leading-5 text-ink-secondary">
-                    {tool.description}
-                  </p>
-                </Card>
-              );
-            })}
+                <p className="text-[13px] leading-[1.4] text-ink-secondary">
+                  {tool.description}
+                </p>
+              </Card>
+            ))}
           </div>
         </div>
 
-        <p className="mt-6 flex items-center justify-center gap-2 text-sm text-ink-secondary">
+        <p className="mt-6 flex items-center justify-center gap-3 text-[13px] font-medium text-ink-muted">
           <span className="size-2 rounded-full bg-gold" aria-hidden="true" />
-          We choose each technology according to the product requirements.
+          All solutions are fully optimized, integrated, and supported 24/7 by
+          our dedicated engineering team.
         </p>
       </MaxWidthWrapper>
     </section>

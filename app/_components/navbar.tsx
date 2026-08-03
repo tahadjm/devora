@@ -2,20 +2,13 @@ import Link from "next/link";
 import { Crown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const links = [
-  { label: "Home", href: "/", active: true },
-  { label: "Services", href: "/#services" },
-  { label: "Projects", href: "/#projects" },
-  { label: "About", href: "#" },
-  { label: "Pricing", href: "#" },
-  { label: "Blog", href: "#" },
-  { label: "Contact", href: "/#contact" },
-];
+import MobileNav from "./mobile-nav";
+import { links } from "./nav-links";
 
 export default function Navbar() {
   return (
     <div className="fixed inset-x-0 top-5 z-50 px-4">
-      <header className="mx-auto flex h-16 w-full max-w-[1120px] items-center justify-between rounded-full border border-zinc-200/60 bg-white/72 px-6 shadow-[0_8px_20px_rgba(0,0,0,0.04)] backdrop-blur-lg md:px-10">
+      <header className="mx-auto flex h-16 w-full max-w-[1120px] items-center justify-between rounded-full border border-zinc-200/60 bg-white/72 px-5 shadow-[0_8px_20px_rgba(0,0,0,0.04)] backdrop-blur-lg md:px-10">
         <Link href="/" className="flex items-center gap-2">
           <Crown className="size-6 text-gold" aria-hidden />
           <span className="font-display text-xl font-semibold text-ink">Devora</span>
@@ -35,9 +28,17 @@ export default function Navbar() {
             </Link>
           ))}
         </nav>
-        <Button variant="accent" size="sm" className="h-9 px-5" asChild>
-          <Link href="/book-a-call">Discuss your project</Link>
-        </Button>
+        <div className="flex items-center gap-1">
+          <Button
+            variant="accent"
+            size="sm"
+            className="hidden h-9 px-5 sm:inline-flex"
+            asChild
+          >
+            <Link href="/book-a-call">Discuss your project</Link>
+          </Button>
+          <MobileNav />
+        </div>
       </header>
     </div>
   );

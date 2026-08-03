@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "./_components/navbar";
 import Hero from "./_components/hero";
-import Stats from "./_components/stats";
+import WhoWeAre from "./_components/who-we-are";
 import Services from "./_components/services";
 import Tools from "./_components/tools";
 import Projects from "./_components/projects";
@@ -21,7 +21,7 @@ export default function HomePage() {
       <Navbar />
       <main>
         <Hero />
-        <Stats />
+        <WhoWeAre />
         <Services />
         <Tools />
         <Projects />

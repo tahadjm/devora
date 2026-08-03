@@ -1,4 +1,4 @@
-import type { StaticImageData } from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 
 import { ArrowUpRight } from "lucide-react";
@@ -20,10 +20,12 @@ import SectionBadge from "./section-badge";
 
 const filters = [
   "All",
-  "Mobile Apps",
-  "Web Platforms",
+  "E-commerce",
   "SaaS",
-  "Dashboards",
+  "Portfolio",
+  "Mobile App",
+  "Landing Page",
+  "Dashboard",
 ] as const;
 
 type Project = {
@@ -106,22 +108,34 @@ export default function Projects() {
     <section
       id="projects"
       aria-labelledby="projects-title"
-      className="bg-white py-24"
+      className="relative overflow-hidden bg-white py-24"
     >
-      <MaxWidthWrapper className="max-w-360">
-        <SectionBadge>Selected Work</SectionBadge>
+      {/* decorative background */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-[54px] top-[194px] h-[1113px] w-[1306px]"
+      >
+        <div className="absolute inset-[-2.47%_-2.11%]">
+          <Image
+            src="/images/projects/grid-bg.svg"
+            alt=""
+            fill
+            unoptimized
+            className="max-w-none"
+          />
+        </div>
+      </div>
+
+      <MaxWidthWrapper className="relative max-w-360">
+        <SectionBadge>Portfolio</SectionBadge>
 
         <h2
           id="projects-title"
           className="mt-4 max-w-4xl font-display text-4xl font-bold tracking-tight text-ink"
         >
-          Products designed and engineered for real business operations
+          Real solutions for real businesses — explore how we helped our
+          clients grow
         </h2>
-
-        <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-ink-secondary">
-          Explore selected web, mobile, and backend products delivered across
-          restaurant, insurance, and retail technology.
-        </p>
 
         <div
           className="mt-10 flex flex-wrap gap-3"
@@ -133,7 +147,7 @@ export default function Projects() {
               className={cn(
                 "inline-flex h-8 items-center rounded-full px-4 text-sm",
                 index === 0
-                  ? "bg-gold font-medium text-white"
+                  ? "bg-[#b8942a] font-medium text-white"
                   : "border border-zinc-200 bg-white text-ink-secondary",
               )}
             >
@@ -146,8 +160,23 @@ export default function Projects() {
           {projects.map((project) => (
             <Card
               key={project.name}
-              className="group flex h-full flex-col gap-0 overflow-hidden border-zinc-200/70 bg-white p-0 shadow-none transition-[transform,border-color,box-shadow] duration-300 ease-out motion-reduce:transition-none motion-safe:hover:-translate-y-1 hover:border-gold/50 hover:shadow-[0_18px_38px_rgba(0,0,0,0.07)]"
+              className="group relative flex h-full flex-col gap-0 overflow-hidden border-zinc-200/70 bg-white p-0 shadow-none transition-[transform,border-color,box-shadow] duration-300 ease-out motion-reduce:transition-none motion-safe:hover:-translate-y-1 hover:border-[#d4b038] hover:shadow-[0_16px_40px_-12px_rgba(0,0,0,0.12)]"
             >
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -right-10 -top-5 z-10 size-[180px] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+              >
+                <div className="absolute inset-[-44.44%]">
+                  <Image
+                    src="/images/projects/inner-glow.svg"
+                    alt=""
+                    fill
+                    unoptimized
+                    className="max-w-none"
+                  />
+                </div>
+              </div>
+
               <MediaImage
                 src={project.image.src}
                 alt={project.image.alt}
@@ -191,7 +220,7 @@ export default function Projects() {
                   asChild
                   variant="secondary"
                   size="sm"
-                  className="mt-6 w-full"
+                  className="mt-6 w-full transition-[opacity,translate] duration-300 ease-out motion-reduce:transition-none [@media(hover:hover)]:translate-y-2 [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-focus-within:translate-y-0 [@media(hover:hover)]:group-focus-within:opacity-100 [@media(hover:hover)]:group-hover:translate-y-0 [@media(hover:hover)]:group-hover:opacity-100"
                 >
                   <Link href={project.href}>
                     View case study
